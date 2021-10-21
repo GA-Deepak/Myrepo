@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <title>View</title>
+</head>
+
+<body style="background-color: burlywood;">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  
+    <h1 style="margin-left: 450px;">PRODUCTS DETAILS</h1>
+    <div class="container" style="margin:0px 300px 0px 450px;">
+      <div class="card-body col-sm-6">
+    <h1 id = "product"></h1>
+    <h6 id = "title"></h6>
+    <img id = "image" src = "" height="200px" width="200px" alt="no image"/>
+    <p id="price"></p>
+    <p id="description"></p>
+  </div>
+  </div>
+  </div>
+
+<script>
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const name = urlParams.get('data1');
+const Title = urlParams.get('data2');
+const Price = urlParams.get('data3');
+const Description = urlParams.get('data4');
+// const locationx = urlParams.get('data5');
+// const catagory = urlParams.get('data6');
+// const stock = urlParams.get('data7');
+const url = urlParams.get('datax');
+temp =  document.getElementById("product");
+temp.innerText = name;
+temp1 =  document.getElementById("title");
+temp1.innerText = Title;
+temp2 =  document.getElementById("price");
+temp2.innerText = Price;
+temp3 =  document.getElementById("description");
+temp3.innerText = Description;
+tempx =  document.getElementById("image");
+console.log(url.slice(8,-2))
+tempx.setAttribute("src",url.slice(8,-2))
+    </script>
+    
+</body>
+</html>
